@@ -200,3 +200,43 @@ html { scroll-behavior: smooth; }
   .f1 { top: auto; bottom: 30%; right: -8px; opacity: .45; }
   .f5 { top: auto; bottom: 6%; }
 }
+
+
+/* ---------- Starke KI ohne Abo ---------- */
+.h-noabo { background: var(--coral); color: #fff; position: relative; overflow: hidden; }
+.h-noabo .section-head .kicker { color: #fff; opacity: .85; }
+.h-noabo h2 { font-size: clamp(40px, 7vw, 76px); }
+.h-noabo .lead { color: rgba(255,255,255,.92); }
+.versus { display: grid; gap: 14px; align-items: stretch; }
+@media (min-width: 860px) { .versus { grid-template-columns: 1.25fr auto .9fr; gap: 20px; } }
+.vs-card { border-radius: 28px; padding: 24px; display: grid; gap: 16px; align-content: start; }
+.vs-abo { background: rgba(21,19,43,.16); }
+.vs-kaufiko { background: var(--ink); box-shadow: 0 30px 60px rgba(21,19,43,.3); }
+.vs-card .label { color: rgba(255,255,255,.8); }
+.vs-mid { align-self: center; justify-self: center; font: 800 22px var(--display); background: #fff; color: var(--ink); width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; transform: rotate(-8deg); }
+.months { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+@media (min-width: 520px) { .months { grid-template-columns: repeat(6, 1fr); } }
+.months span { font: 500 12px var(--mono); letter-spacing: .6px; text-transform: uppercase; text-align: center; padding: 12px 0; border-radius: 12px; background: rgba(255,255,255,.14); color: rgba(255,255,255,.55);
+  animation: monthOn 7s linear infinite; animation-delay: calc(var(--k) * .42s); }
+@keyframes monthOn { 0%, 4% { background: rgba(255,255,255,.14); color: rgba(255,255,255,.55); transform: scale(1); }
+  7% { background: #fff; color: #15132B; transform: scale(1.12); } 12%, 80% { background: #fff; color: #15132B; transform: scale(1); }
+  92%, 100% { background: rgba(255,255,255,.14); color: rgba(255,255,255,.55); } }
+.vs-note { font-size: 14.5px; color: rgba(255,255,255,.82); }
+.once { display: grid; justify-items: start; gap: 4px; }
+.once .tick { width: 64px; height: 64px; border-radius: 20px; background: var(--sun); color: var(--ink); display: grid; place-items: center; margin-bottom: 10px; animation: tickPop 7s var(--spring) infinite; }
+.once .tick svg { width: 34px; height: 34px; stroke-dasharray: 30; animation: tickDraw 7s ease infinite; }
+@keyframes tickPop { 0%, 6% { transform: scale(.4) rotate(-20deg); opacity: 0; } 12%, 88% { transform: scale(1) rotate(0); opacity: 1; } 96%, 100% { transform: scale(.4); opacity: 0; } }
+@keyframes tickDraw { 0%, 10% { stroke-dashoffset: 30; } 18%, 100% { stroke-dashoffset: 0; } }
+.once strong { font: 800 clamp(30px, 4vw, 40px)/1 var(--display); letter-spacing: -.8px; }
+.once em { font: 500 13px var(--mono); font-style: normal; letter-spacing: 1.1px; text-transform: uppercase; color: var(--sun); }
+.noabo-cards { list-style: none; display: grid; gap: 14px; margin-top: 22px; }
+@media (min-width: 760px) { .noabo-cards { grid-template-columns: repeat(3, 1fr); } }
+.noabo-cards li { background: #fff; color: var(--ink); border-radius: 22px; padding: 22px; display: grid; gap: 6px; }
+.noabo-cards strong { font: 800 24px/1.1 var(--display); letter-spacing: -.4px; }
+.noabo-cards p { color: var(--muted); font-size: 15.5px; }
+.noabo-quote { margin-top: 34px; font: 700 clamp(22px, 3.4vw, 34px)/1.15 var(--display); letter-spacing: -.5px; max-width: 20em; }
+.noabo-quote::before { content: ""; display: block; width: 46px; height: 6px; border-radius: 6px; background: var(--sun); margin-bottom: 14px; }
+@media (prefers-reduced-motion: reduce) {
+  .months span, .once .tick, .once .tick svg { animation: none; }
+  .months span { background: #fff; color: #15132B; }
+}

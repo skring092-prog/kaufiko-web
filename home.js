@@ -5,7 +5,7 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
   // Staffelung beim Einlaufen: Geschwister nacheinander.
-  $$('.pledge, .packs, .feat, .intro-grid').forEach(function (g) {
+  $$('.pledge, .packs, .feat, .intro-grid, .noabo-cards').forEach(function (g) {
     $$('.reveal', g).forEach(function (el, i) { el.style.setProperty('--i', i); });
   });
 
